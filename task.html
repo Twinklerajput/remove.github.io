@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+
+    <style type="text/css">
+      .new-rect {
+        background: yellow;
+        width: 22%;
+        height: 30px;
+        border: 1px solid black;
+        padding: 10px;
+      }
+      #text {
+        background: beige;
+        width: 22%;
+        height: 30px;
+        border: 1px solid black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div1">
+      <p>close</p>
+    </div>
+    <div id="text">div1</div>
+
+    <script type="text/javascript">
+      var i = 1;
+      document.getElementById("text").onclick = function () {
+        var div = document.createElement("div");
+        var button = document.createElement("BUTTON");
+        button.innerHTML = "x";
+        div.className = "new-rect";
+        div.innerHTML = i++;
+        document.getElementsByTagName("body")[0].appendChild(div);
+        div.appendChild(button);
+        button.onclick = (e) => {
+          document.getElementsByTagName("body")[0].firstElementChild.remove(div);
+         
+            
+        };
+      
+      };
+    </script>
+  </body>
+</html>
